@@ -9,6 +9,8 @@ In this section, we will cover the basic concepts of a Neural Network (NN) class
 
 ## Learning/Training of a NN
 
+### Gradient descent
+
 ## Activation functions
 
 ## Number of epochs, batch size

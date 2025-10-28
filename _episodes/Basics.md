@@ -11,6 +11,10 @@ In this section, we will cover the basic concepts of a Neural Network (NN) class
 
 ### Gradient descent
 
+### Adam
+
+### Regularization
+
 ## Activation functions
 
 ## Number of epochs, batch size

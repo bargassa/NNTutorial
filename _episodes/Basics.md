@@ -23,6 +23,7 @@ $L$ is reflective of the morphology of the classifier: the measure of the classi
 * $$\ L = \frac{1}{N} \times \Sigma_{i=1}^{N} ln(1 - y(i)). \$$ If the prediction is B: $y(i) → 0$, then we have $L → 0$.
 
 The general, ie. multi-class, cross-entropy is given by:
+
 $$\
 \begin{align}
 L =  - \frac{1}{N} \times \Sigma_{i=1}^{N} [ \Sigma_{j=1}^{m} zj(i) \times ln(yj(i)) ] & (1') &,

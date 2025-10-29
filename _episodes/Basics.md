@@ -14,7 +14,7 @@ L & = & - \frac{1}{N} \times \Sigma_{i=1}^{N} [ z(i) \times ln(y(i)) + (1 - z(i)
 \\$$
 
 where:
-* $z(i)$ is the true classification: it is 1 for S, and 0 for B; this can be viewed as the \textbf{tag} of the event, ie. the prior knowledge that we provide to the classifier for this latter to know which event is S or B.
+* $z(i)$ is the true classification: it is 1 for S, and 0 for B; this can be viewed as the {\bf tag} of the event, ie. the prior knowledge that we provide to the classifier for this latter to know which event is S or B.
 
 ## Architecture & weights
 

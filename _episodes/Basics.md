@@ -11,7 +11,7 @@ $$\\
 \begin{align}
 L = - 1/N \Sigma i=1N [ z(i) \times ln(y(i)) + (1 - z(i)) \times ln(1 - y(i)) ] (1),
 \end{align}
-\\
+\\$$
 
 ## Architecture & weights
 

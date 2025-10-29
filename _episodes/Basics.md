@@ -9,12 +9,13 @@ When <b>classifying</b> events, we need to optimize a quantity which quantifies 
 
 $$\
 \begin{align}
-L & = & - \frac{1}{N} \times \Sigma_{i=1}^{N} [ z(i) \times ln(y(i)) + (1 - z(i)) \times ln(1 - y(i)) ] & (1) &,
+L =  - \frac{1}{N} \times \Sigma_{i=1}^{N} [ z(i) \times ln(y(i)) + (1 - z(i)) \times ln(1 - y(i)) ] & (1) &,
 \end{align}
 \$$
 
 where:
-* $z(i)$ is the true classification: it is 1 for S, and 0 for B; this can be viewed as the {\bf tag} of the event, ie. the prior knowledge that we provide to the classifier for this latter to know which event is S or B.
+* $z(i)$ is the true classification: it is 1 for S, and 0 for B; this can be viewed as the <b>tag</b> of the event, ie. the prior knowledge that we provide to the classifier for this latter to know which event is S or B.
+* $y(i)$ is the classifier's output, with its value between 0 and 1, ie. its <b>prediction</b> for whether an event is S(1) or B(0).
 
 ## Architecture & weights
 

@@ -26,11 +26,11 @@ The general, ie. multi-class, cross-entropy is given by:
 
 $$\
 \begin{align}
-L =  - \frac{1}{N} \times \Sigma_{i=1}^{N} [ \Sigma_{j=1}^{m} zj(i) \times ln(yj(i)) ] & (1') &,
+L =  - \frac{1}{N} \times \Sigma_{i=1}^{N} [ \Sigma_{j=1}^{m} z_j(i) \times ln(y_j(i)) ] & (1') &,
 \end{align}
 \$$
 
-where $j$ is the index of m different classes. Eq. (1) is easily obtained by considering $m=2$, and considering that for each event $i$, we have $z1 + z2 = 1$ and $y1 + y2 = 1$.
+where $j$ is the index of m different classes. Eq. (1) is easily obtained by considering $m=2$, and considering that for each event $i$, we have $z_1 + z_2 = 1$ and $y_1 + y_2 = 1$.
 
 ## Architecture & weights
 

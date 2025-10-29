@@ -30,6 +30,8 @@ L =  - \frac{1}{N} \times \Sigma_{i=1}^{N} [ \Sigma_{j=1}^{m} zj(i) \times ln(yj
 \end{align}
 \$$
 
+where $j$ is the index of m different classes. Eq. (1) is easily obtained by considering $m=2$, and considering that for each event $i$, we have $z1 + z2 = 1$ and $y1 + y2 = 1$.
+
 ## Architecture & weights
 
 ## Learning/Training of a NN

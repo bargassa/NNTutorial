@@ -9,7 +9,7 @@ When $classifying$ events, we need to optimize a quantity which quantifies our c
 
 $$\\
 \begin{align}
-L & = & - \frac{1}{N} \Sigma_{i=1}^{N} [ z(i) \times ln(y(i)) + (1 - z(i)) \times ln(1 - y(i)) ] (1),
+L & = & - \frac{1}{N} \Sigma_{i=1}^{N} [ z(i) \times ln(y(i)) + (1 - z(i)) \times ln(1 - y(i)) ] & (1) &,
 \end{align}
 \\$$
 

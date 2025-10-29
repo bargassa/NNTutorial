@@ -20,9 +20,7 @@ where:
 $L$ is reflective of the morphology of the classifier: the measure of the classification, itself a function of the separation achieved by the classifier. In equation (1), the first and second terms are "signal" and "background" term respectively. Indeed:
 
 $$\
-\begin{align}
 L = \frac{1}{N} \times \Sigma_{i=1}^{N} ln(y(i)).
-\end{align}
 \$$
 
 ## Architecture & weights

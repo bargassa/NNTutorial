@@ -153,6 +153,9 @@ Practically, it is penalizing, possibly suppressing, the link between nodes $i$ 
 
 ## Activation functions
 
+> # Figure 3
+> <img src="../fig/ActivationFunctions.png" alt="" style="width: 500px;"/>
+
 ## Number of epochs, batch size
 
 ## Code snippets

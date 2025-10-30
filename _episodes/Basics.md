@@ -19,8 +19,8 @@ where:
 
 $L$ is reflective of the morphology of the classifier: the measure of the classification, itself a function of the separation achieved by the classifier. In equation (1), the first and second terms are "signal" and "background" term respectively. Indeed:
 
-* $$\ L = \frac{1}{N} \times \Sigma_{i=1}^{N} ln(y(i)). \$$ If the prediction is S: $y(i) → 1$, then we have $L → 0$.
-* $$\ L = \frac{1}{N} \times \Sigma_{i=1}^{N} ln(1 - y(i)). \$$ If the prediction is B: $y(i) → 0$, then we have $L → 0$.
+* $$\ L = - \frac{1}{N} \times \Sigma_{i=1}^{N} ln(y(i)). \$$ If the prediction is S: $y(i) → 1$, then we have $L → 0$.
+* $$\ L = - \frac{1}{N} \times \Sigma_{i=1}^{N} ln(1 - y(i)). \$$ If the prediction is B: $y(i) → 0$, then we have $L → 0$.
 
 The general, ie. multi-class, cross-entropy is given by:
 

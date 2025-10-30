@@ -133,7 +133,7 @@ where $\beta^t$ is $\beta$ to the power $t$. Then, the updated parameters $\thet
 
 $$\
 \begin{align}
-\theta_t = \frac{\theta_{t−1} − \alpha \times \hat{m}_t }{( \hat{v}_t + \epsilon)} & (10) &.
+\theta_t = \theta_{t−1} − \frac{\alpha \times \hat{m}_t }{( \hat{v}_t + \epsilon)} & (10) &.
 \end{align}
 \$$
 

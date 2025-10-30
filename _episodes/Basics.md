@@ -61,10 +61,18 @@ Here, each input node $i$ sends the same input variable $x_i$ to all nodes of th
 
 In the case of a NN with one hidden layer, the output discriminant $y$ of a NN at the output layer is given as a function of input variables $x_i$:
 
-> # Figure 2
-> <img src="../fig/NNarch-forwbck.png" alt="" style="width: 500px;"/>
+$$\
+\begin{align}
+y = \Sigma_j^{N_{nodes}} [ g(\Sigma_i^{N_{inputs}} w_{ij} \times x_i) \times w_j ] + O & (4) &,
+\end{align}
+\$$
+
+where $w_{ij}$ is the weight between node $i$ of a layer and node $j$ of another layer, $w_j$ is the weight between node $j$ of penultimate layer and the output. $g$ is the activation function (see section on activation functions) operating at each node $h_j$ of the hidden layer. As such, y retains the information about the input variables plus a set of weights optimized to minimize the cross-entropy loss.
 
 ## Learning/Training of a NN
+
+> # Figure 2
+> <img src="../fig/NNarch-forwbck.png" alt="" style="width: 500px;"/>
 
 ### Gradient descent
 

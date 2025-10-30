@@ -57,6 +57,13 @@ In a NN, the information of the n input variables xi is propagated to different 
 > # Figure 1
 > <img src="../fig/NNarch-forw.png" alt="" style="width: 500px;"/>
 
+Here, each input node $i$ sends the same input variable $x_i$ to all nodes of the hidden layer. Overall, the NN is fully connected, meaning that each node of a given layer has a connection with all nodes of the subsequent layer. The lines, ie. the numerical connections, between the nodes are the weights $w$, all different from one another, and are updated during the training of the NN (see section on learning). Higher/Lower weights indicate a stronger/weaker influence of one neuron on another. The hidden layers of the NN can be viewed as functions of the variables/nodes of the previous layer.
+
+In the case of a NN with one hidden layer, the output discriminant $y$ of a NN at the output layer is given as a function of input variables $x_i$:
+
+> # Figure 2
+> <img src="../fig/NNarch-forwbck.png" alt="" style="width: 500px;"/>
+
 ## Learning/Training of a NN
 
 ### Gradient descent

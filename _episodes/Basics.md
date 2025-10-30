@@ -173,7 +173,11 @@ Finally, we should mention the initializer, which is a notion often associated w
 
 ## Number of epochs, batch size
 
+An epoch, as referred to in the subsection "Learning/Training of a NN" is simply an iteration where the full forward- & backward propagation take place, going through all training events once. The batch size $b$ is the number of events taken to update the weights. If $N$ is the number of events to be trained upon, then in 1 epoch, there are $N/b$ updates of the weights. Frequently, batch sizes are chosen as $2^m$. The update through several batches allows multiple parameter updates per epoch. Furthermore, in the case where the partial derivative of Eq. (6) is evaluated as expectation value over a limited number of events as in the batches, the partial derivative can have a larger variance, thus sometimes helping to escape from local minima.
+
 > # Figure 4
 > <img src="../fig/Batch.png" alt="" style="width: 500px;"/>
+
+<b>Advice & Possible pitfalls:</b> It is generally a good practice to make b large as to include enough statistics for the training within an update. This can contribute to have a training/validation curve which is more stable, ie. with less fluctuations. On the other hand, if $b$ is so large as to match the size of the training sample $N$, there will be only one update in the training, as all data will be used to train the NN at once: this can be time consuming, and quite inefficient.
 
 ## Code snippets

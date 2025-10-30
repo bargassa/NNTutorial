@@ -149,7 +149,7 @@ L_1 = L + \alpha \times \Sigma_{i,j} |w_{ij}| & , & L_2 = L + \alpha \times \Sig
 \end{align}
 \$$
 
-Practically, it is penalizing, possibly suppressing, the link between nodes $i$ and $j$. Regularization can stop the training when eg. the $L_2$ norm of the difference of weights between two epochs is smaller than $\epsilon$: $\|{w_t − w_{t−k}\|^2 < \epsilon$; it reduces over-training.
+Practically, it is penalizing, possibly suppressing, the link between nodes $i$ and $j$. Regularization can stop the training when eg. the $L_2$ norm of the difference of weights between two epochs is smaller than $\epsilon$: $||{w_t − w_{t−k}||^2 < \epsilon$; it reduces over-training.
 
 ## Activation functions
 

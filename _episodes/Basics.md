@@ -36,7 +36,7 @@ It has to be noted that Keras, an open-source library in Python for artificial n
 
 $$\
 \begin{align}
-L_K = - \frac{1}{N} \times \Sigma_{i=1}^{N} wi \times [ z(i) \times ln(y(i)) + (1 - z(i)) \times ln(1 - y(i)) ] & (2) & ,
+L_K = - \frac{1}{N} \times \Sigma_{i=1}^{N} w_i \times [ z(i) \times ln(y(i)) + (1 - z(i)) \times ln(1 - y(i)) ] & (2) & ,
 \end{align}
 \$$
 

@@ -184,6 +184,7 @@ An epoch, as referred to in the subsection "Learning/Training of a NN" is simply
 
 We should first define the basic parameters of the NN: learning- & decay-rate, architecture, and important functions (activation and initialization). In the same shot, we can also set the number of epochs and the size of the batches. NB: please note that in [Keras 3](https://keras.io/api/optimizers/adam/) decay has changed to [learning rate schedules](https://keras.io/api/optimizers/learning_rate_schedules/).
 
+~~~
 activ = "relu"
 LearningRate = 1.e-5
 DecayRate = 1.e-2
@@ -192,3 +193,5 @@ architecture=NodeLayer.split()
 ini = "he_normal"
 n_epochs = 2000
 batch_size = 10000
+~~~
+

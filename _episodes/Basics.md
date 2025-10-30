@@ -125,7 +125,7 @@ where $β_{1,2} \in [0, 1[$ control the exponential decay rates of these moving 
 
 $$\
 \begin{align}
-\hat{m}_t = m_t /(1 − \beta_1t), \hat{v}_t= v_t /(1 − \beta_2t) & (9) &,
+\hat{m}_t = m_t /(1 − \beta_1^t), \hat{v}_t= v_t /(1 − \beta_2^t) & (9) &,
 \end{align}
 \$$
 

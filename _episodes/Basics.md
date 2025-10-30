@@ -137,7 +137,7 @@ $$\
 \end{align}
 \$$
 
-It is interesting to note that an optimization based on Adam has an adaptive learning rate, which is deduced from the first (mean) and second (variance) moments of gradients: in Eq. (10), the effective step, proportional to a learning rate, is given by: $\alpha \frac{\hat{m}_t }{ \sqrt{\hat{v}_t}}$, which is $t$-dependent and thus adaptive. For most of cases, it has $\alpha$ as upper bound. Generally, the Adam optimization is helpful when the objective function (eg. a loss or cost function) is stochastic: when it is composed of a sum of sub-functions evaluated at different sub-samples of data.
+It is interesting to note that an optimization based on Adam has an adaptive learning rate, which is deduced from the first (mean) and second (variance) moments of gradients: in Eq. (10), the effective step, proportional to a learning rate, is given by: $\alpha [\frac{\hat{m}_t}{\sqrt{\hat{v}_t}}]$, which is $t$-dependent and thus adaptive. For most of cases, it has $\alpha$ as upper bound. Generally, the Adam optimization is helpful when the objective function (eg. a loss or cost function) is stochastic: when it is composed of a sum of sub-functions evaluated at different sub-samples of data.
 
 ### Regularization
 

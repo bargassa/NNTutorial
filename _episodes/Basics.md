@@ -117,7 +117,7 @@ $g_t$ can be viewed as the equivalent of the gradient of Eq. (6), where the func
 
 $$\
 \begin{align}
-m_t = e^{−\beta_1t} \times m_{t-1} + (1 - e^{−\beta_1t}) \times g_t & , & v_t = e^{−\beta_2t} \times v_{t-1} + (1 - e^{−\beta_2t}) · g_t & (8) &,
+m_t = e^{−\beta_1t} \times m_{t-1} + (1 - e^{−\beta_1t}) \times g_t & , & v_t = e^{−\beta_2t} \times v_{t-1} + (1 - e^{−\beta_2t}) \times g_t & (8) &,
 \end{align}
 \$$
 

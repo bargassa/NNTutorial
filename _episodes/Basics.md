@@ -84,7 +84,7 @@ The equation giving the evolution of the weights $w_{tij}$ at epoch $t$, is:
 
 $$\
 \begin{align}
-w^{t+1}_{ij} = w^t_{ij} − [R \times e^{−D \cdot t} · \Delta w^t_{ij} ] & (5) &,
+w^{t+1}_{ij} = w^t_{ij} − [R \times e^{−D t} · \Delta w^t_{ij} ] & (5) &,
 \end{align}
 \$$
 

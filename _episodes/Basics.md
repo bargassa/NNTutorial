@@ -153,8 +153,12 @@ Practically, it is penalizing, possibly suppressing, the link between nodes $i$ 
 
 ## Activation functions
 
+
+
 > # Figure 3
 > <img src="../fig/ActivationFunctions.png" alt="" style="width: 500px;"/>
+
+Finally, we should mention the initializer, which is a notion often associated with the activation functions. An initializer is a method for initializing the weights of a NN. Its goal is to avoid different nodes learning identical mappings (like Eq. (4)) within the network. This is achieved by taking the initial weights $w_{ij}$ as random numbers from a uniform interval $[-w,w]$ or from a gaussian distribution with mean value 0 and standard deviation $\sigma$. One of the most famous initializers is the Glorot method, which draws samples from a uniform distribution with limits determined by the number of input and output units in the layer. The He Normal initializer is similar to the Glorot method while being specifically designed for ReLU activation function.
 
 ## Number of epochs, batch size
 

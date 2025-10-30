@@ -71,6 +71,8 @@ where $w_{ij}$ is the weight between node $i$ of a layer and node $j$ of another
 
 ## Learning/Training of a NN
 
+The NN is trained iteratively on the (training) data to adjust the weights, aiming to find their optimal values that minimize the loss, ie. minimize the difference between its predictions and the true values. This is done in the backward propagation step of the training, as illustrated in the figure below. The full iteration of a forward- & backward-propagation is called an epoch, ie. <b>epoch</b> in the training of the NN.
+
 > # Figure 2
 > <img src="../fig/NNarch-forwbck.png" alt="" style="width: 500px;"/>
 

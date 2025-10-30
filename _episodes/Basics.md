@@ -80,6 +80,29 @@ The prediction of the NN for an event $y_p$ is compared with the true value $y_t
 
 ### Gradient descent
 
+The equation giving the evolution of the weights $w_{tij}$ at epoch $t$, is:
+
+$$\
+\begin{align}
+w^{t+1}_{ij} = w^t_{ij} − [R \times e^{−D \cdot t} · \Delta w^t_{ij} ] & (5) &,
+\end{align}
+\$$
+
+where $R$ and $D$ are the learning and decay rates, respectively. $R is usually tested in the $[10^{-5},10^{-2}]$ interval. $∆w^t_{ij}$ is the partial derivative (versus $w$) of the back-propagation between two epochs:
+
+$$\
+\begin{align}
+\Delta w^t_{ij} = \frac{\delta L_K}{\delta w} & (6) &.
+\end{align}
+\$$
+
+This gradient gives the direction of the steepest increase of the loss function, and the learning rate $R$ controls the step size taken during an update in that direction. By moving in the opposite direction of the gradient, the algorithm iteratively adjusts the weights to reduce the error and improve the NN's performance. Let us explain this latter point more explicitly. The derivative of Eq. (6), within Eq. (5), points in the direction where the loss function $L_K$ decreases the most:
+
+* If $\frac{\delta L_K}{\delta w} ≥ 0$: $L_K$ is increasing, then $w^{t+1}_{ij} ≤ w^t_{ij}$, thus weights will decrease and one can only have $\frac{\delta L_K}{\delta w} ∼ 0$.
+* If $\frac{\delta L_K}{\delta w} ≤ 0$: $L_K$ is decreasing, meaning that there is less cross-entropy, thus $L_K → 0$, thus: $\frac{\delta L_K}{\delta w} ∼ 0$.
+
+Let us now consider a numerical case. Let's consider a case where the weights $w_i$ of Eq. (2) are too small, eg. O($10^{−7}$), while the weights $w_{ij}$ are O($1$). In such a case, $L_K$ (see Eq. (2)), thus $\Delta w^t_{ij}$ (see Eq.(6)), will also be too small. In such a case, one can see from Eq. (5) that the NN learns almost nothing. This is one illustration of the fact that in a classification problem, the weights should be properly balanced; we will address this point in the section "Event balancing".
+
 ### Adam
 
 ### Regularization

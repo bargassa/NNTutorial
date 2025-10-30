@@ -30,7 +30,7 @@ Each event i in the training should be weighted by appropriate weight wi which r
     * Be exposed to processes proportionally to their production rate $\sigma$ in SM. It has to be noted that the cross section $\sigma$ has to be taken into account when the B sample includes various background processes; in the case of a single background process per sample, this can be omitted and be taken as 1.
     * "Be free" of number of generated events per sample.
     * Be trained with simulated events resembling as much as possible to a Data event via the appropriate scale factor(s).
-* S weights should be like: $w_i(S) = (1/N_{tot}) \times \Pi_i SF(i) \times w(i)$.
+* S weights should be like: $w_i(S) = \frac{1}{N_{tot}} \times \Pi_i SF(i) \times w(i)$.
 
 Now these S & B weights, given their definition, can be very different and lead to numerical problems in the training of the NN: for example, the validation loss can reach O($10^{-6,-7}$) very early on, and lead to weird behaviors and/or under-performance. We should therefore put events on equal footing by properly balancing each event for the training. <b>In the case of binary classification</b>, we should have something like:
 * B weights should be: $w_i(B) \times (\frac{N_{evt}(B)}{\Sigma_i w_i(B)})$.

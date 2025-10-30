@@ -3,6 +3,8 @@ The basics of a NN
 ---
 In this section, we will cover the basic concepts of a Neural Network (NN) classifier. First, we will cover the quantity which is minimized and is guiding the training of a NN, quantity which can also be used by other classifiers. Then we will cover the specifics of a NN classifier, namely its architecture and how one builds its output discriminator as function of the input variables. We will then cover how a NN is trained, and go over the activation functions of a NN. Finally, we will provide code snippets illustrating the mentioned functionalities.
 
+In this tutorial, we will first go through the basic ideas of a NN, then cover its different metrics, and then cover how events/samples should be treated. In each section, we will provide code snippets as to illustrate the practice of each covered point. To not overload the flow of the tutorial, these pieces of code will be just snippets, and full example codes will be provided in the last section.
+
 ## Loss functions: binary & multi-class
 
 When <b>classifying</b> events, we need to optimize a quantity which quantifies our classification; this quantity can be a loss function. If we are dealing with a binary classification of Signal (S) versus Background (B), we need a measure of how much we have classified signal events as S, and background events as B. The binary cross-entropy, which is one such quantity, is one of the loss functions used for binary studies, and is averaged over N events:

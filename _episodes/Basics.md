@@ -153,12 +153,23 @@ Practically, it is penalizing, possibly suppressing, the link between nodes $i$ 
 
 ## Activation functions
 
+Forword: In this section $x$ or $z$ is generally the product of weights $w_{ij}$ and input values $x_i$.
 
+Various activation functions are used for different nodes of a NN, their analytical properties matching the varying needs of different nodes and/or serving computational purposes. For some of activation functions, one can have $\frac{\delta L}{\delta w} \sim 0$ for extreme values of $x$. This has the inconvience of leading to a non-learning NN.
+
+Let us consider the case where $g(x)=x$ which, through a simplified version of the NN, illustrates one of its basic capability. In this case, the outputs $y_j$ of the NN (see Eq. (4)) are completely linear, and provided there are enough nodes in the hidden layers versus the number of input variables, the NN would, via a linear combination of the input variables $x_i$, numerically diagonalise them. If the data is such that correlations among discriminating variables are only linear, this aspect of the NN would decorrelate them. If correlations among variables/features are of higher order, the user can decorrelate them before feeding them to the NN.
+
+The purpose of the activation function is to introduce a non-linear functionality in the NN.
+
+* For the first and hidden layers, the most common activation function used is the Rectified Linear Units (ReLU) function (see figure below). For positive values of $x$, ReLU function is simply $x$. This function avoids the $\frac{\delta L}{\delta w} \sim 0$ problem at positive, but not at negative values of $x$. It has another advantage, which is computational: since it doesn’t contain any exponential term, it results in a training time 6 times shorter than with either sigmoid or Tanh.
+* The Tanh function (see figure below) has a zero-centered output which leads to an easier learning of weights which are a mixture of positive and negative weights; however, it has also the problem $\frac{\delta L}{\delta w} \sim 0$ for extreme values of $x$.
+* The sigmoid function (see figure below) is useful for the output layer of the NN where we want a response in the $[0,1]$ interval. For hidden layers, this function has the $\frac{\delta L}{\delta w} \sim 0$ problem. Furthermore, it is not zero-centered. It is usually used for the output layer of binary NN’s. If the tag of events is as defined for Eq. (1), ie. $z=0/1$ for B/S events, the sigmoid function allows to classify/predict S events for $y>0.5$ and B events for $y<0.5$, this at a single node of the output layer, thus allowing to avoid the use of two nodes at the output layer for a binary NN.
+* The Softmax activation function is typically used in the output layer of multi-class NN’s. It first amplifies the raw output scores of the nodes of the previous layer with an exponential function and then converts them into a probability distribution across multiple classes, ensuring that the probabilities for all classes sum up to 1. For example, for a NN with two nodes $(y_1,y_2)$ at its output layer, and where each $y$ is an output like in Eq. (4), the outcome of the first output node is: $\frac{e^{y_1}}{(e^{y_1}+e^{y_2})}$, while the one of the second output node is: $\frac{e^y_2}}{(e^{y_1}+e^{y_2})}$.
 
 > # Figure 3
 > <img src="../fig/ActivationFunctions.png" alt="" style="width: 500px;"/>
 
-Finally, we should mention the initializer, which is a notion often associated with the activation functions. An initializer is a method for initializing the weights of a NN. Its goal is to avoid different nodes learning identical mappings (like Eq. (4)) within the network. This is achieved by taking the initial weights $w_{ij}$ as random numbers from a uniform interval $[-w,w]$ or from a gaussian distribution with mean value 0 and standard deviation $\sigma$. One of the most famous initializers is the Glorot method, which draws samples from a uniform distribution with limits determined by the number of input and output units in the layer. The He Normal initializer is similar to the Glorot method while being specifically designed for ReLU activation function.
+Finally, we should mention the initializer, which is a notion often associated with the activation functions. An initializer is a method for initializing the weights of a NN. Its goal is to avoid different nodes learning identical mappings (like Eq. (4)) within the network. This is achieved by taking the initial weights $w_{ij}$ as random numbers from a uniform interval $[-w,+w]$ or from a gaussian distribution with mean value 0 and standard deviation $\sigma$. One of the most famous initializers is the Glorot method, which draws samples from a uniform distribution with limits determined by the number of input and output units in the layer. The He Normal initializer is similar to the Glorot method while being specifically designed for ReLU activation function.
 
 ## Number of epochs, batch size
 

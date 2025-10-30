@@ -12,7 +12,7 @@ We need 3 samples: one to train the NN, another to validate the training, and an
 
 In the case where the values of the input variables vary by several orders of magnitude and/or are different for the various input variables, the adjusting of the NN parameters might be difficult, typically because the same weights will have to cover the possibly wildly different values. It is therefore better to render these values comparable, while they should naturally retain their discriminating power.
 
-→ One possibility is to decrease the order of magnitude of an input variable $x_i$ while taking into account its mean value $<x_i>$ and standard deviation $\sigma_i$: $x'_i = (x_i - <x_i>) / \sigma_i$.
+→ One possibility is to decrease the order of magnitude of an input variable $x_i$ while taking into account its mean value $<x_i>$ and standard deviation $\sigma_i$: $x'_i = \frac{(x_i - <x_i>)}{\sigma_i}$.
 
 → Another possibility is to normalize the input variables to the $[-1,+1]$ interval. This has the property of being simple, zero-centered (which can be interesting in some cases), and will be illustrated in among the snippets below.
 

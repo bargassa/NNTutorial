@@ -181,3 +181,7 @@ An epoch, as referred to in the subsection "Learning/Training of a NN" is simply
 <b>Advice & Possible pitfalls:</b> It is generally a good practice to make b large as to include enough statistics for the training within an update. This can contribute to have a training/validation curve which is more stable, ie. with less fluctuations. On the other hand, if $b$ is so large as to match the size of the training sample $N$, there will be only one update in the training, as all data will be used to train the NN at once: this can be time consuming, and quite inefficient.
 
 ## Code snippets
+
+We should first define the basic parameters of the NN: learning- & decay-rate, architecture, and important functions (activation and initialization). In the same shot, we can also set the number of epochs and the size of the batches.
+
+NB: please note that in Keras 3

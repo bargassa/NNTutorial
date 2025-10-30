@@ -36,7 +36,7 @@ Now these S & B weights, given their definition, can be very different and lead 
 * B weights should be: $w_i(B) \times (\frac{N_{evt}(B)}{\Sigma_i w_i(B)})$.
 * S weights should be: $w_i(S) \times (\frac{N_{evt}(B)}{\Sigma_i w_i(S)})$.
 
-Here, both B and S weights contain the same total number of eg. B events $N_{evt}(B)$ as to render the respective weights numerically comparable, while naturally preserving their event-by-event differences.
+Here, both B and S weights contain the same total number of eg. B events $N_{evt}(B)$ as to render the respective weights numerically comparable, while naturally preserving their event-by-event differences through $w_i(B,S)$.
 
 ## Code snippets
 

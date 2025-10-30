@@ -121,7 +121,7 @@ m_t = e^{−\beta_1t} · m_{t-1} + (1 - e^{−\beta_1t}) \times g_t & , & v_t = 
 \end{align}
 \$$
 
-where $β_{1,2} ∈ [0, 1[$ control the exponential decay rates of these moving averages. The moving averages themselves are estimates of the first moment (the mean) and the second raw moment (the uncentered variance) of the gradient. They are initialized as (vectors of) $\theta$’s. It should be noted that at $t=0$, we have: $m_t = m_{t−1}$, so the gradient descent doesn’t play a role for the first iteration. On the other hand, for $t = +Inf$. we have: $m_t= \nabla \theta f_t(\theta_{t−1})$, where only the gradient of the function plays a role. The estimate of these moments are given by:
+where $β_{1,2} \in [0, 1[$ control the exponential decay rates of these moving averages. The moving averages themselves are estimates of the first moment (the mean) and the second raw moment (the uncentered variance) of the gradient. They are initialized as (vectors of) $\theta$’s. It should be noted that at $t=0$, we have: $m_t = m_{t−1}$, so the gradient descent doesn’t play a role for the first iteration. On the other hand, for $t = +Inf$. we have: $m_t= \nabla \theta f_t(\theta_{t−1})$, where only the gradient of the function plays a role. The estimate of these moments are given by:
 
 $$\
 \begin{align}
@@ -133,11 +133,11 @@ where $\beta^t$ is $\beta$ to the power $t$. Then, the updated parameters $\thet
 
 $$\
 \begin{align}
-\theta_t = \frac{\theta_{t−1} − \alpha \times m̂_t }{( v̂_t + \epsilon)} & (10) &.
+\theta_t = \frac{\theta_{t−1} − \alpha \times \hat{m}_t }{( \hat{v}_t + \epsilon)} & (10) &.
 \end{align}
 \$$
 
-It is interesting to note that an optimization based on Adam has an adaptive learning rate, which is deduced from the first (mean) and second (variance) moments of gradients: in Eq. (10), the effective step, proportional to a learning rate, is given by: $\frac{\alpha · m̂_t }{ \sqrt{v̂_t}}$, which is $t$-dependent and thus adaptive. For most of cases, it has $\alpha$ as upper bound. Generally, the Adam optimization is helpful when the objective function (eg. a loss or cost function) is stochastic: when it is composed of a sum of sub-functions evaluated at different sub-samples of data.
+It is interesting to note that an optimization based on Adam has an adaptive learning rate, which is deduced from the first (mean) and second (variance) moments of gradients: in Eq. (10), the effective step, proportional to a learning rate, is given by: $\frac{\alpha · \hat{m}_t }{ \sqrt{\hat{v}_t}}$, which is $t$-dependent and thus adaptive. For most of cases, it has $\alpha$ as upper bound. Generally, the Adam optimization is helpful when the objective function (eg. a loss or cost function) is stochastic: when it is composed of a sum of sub-functions evaluated at different sub-samples of data.
 
 ### Regularization
 

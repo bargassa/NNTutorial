@@ -24,6 +24,17 @@ The seeding of a NN is random if left unspecified. The specification of the seed
 
 ## Event weighting & balancing
 
+Each event i in the training should be weighted by appropriate weight wi which reflects some physics aspect(s) and the sample specificity. Namely:
+
+B weights should be like : w(B)i = (σ/Ntot) . Πi SF(i) . w(i), where σ is the cross-section of the event under consideration, SF(i) is the scale factor, and Ntot is the total number of events. This is because the NN has to:
+Be exposed to processes proportionally to their production rate σ in SM. It has to be noted that the cross section σ has to be taken into account when the B sample includes various background processes; in the case of a single background process per sample, this can be omitted and be taken as 1.
+"Be free" of number of generated events per sample.
+Be trained with a simulated event resembling as much as possible to a Data event via the appropriate scale factor(s).
+S weights should be like: w(S)i = (1/Ntot) . Πi SF(i) . w(i).
+Now these S & B weights, given their definition, can be very different and lead to numerical problems in the training of the NN: for example, the validation loss can reach O(10-6,-7) very early on, and lead to weird behaviors and/or under-performance. We should therefore put events on equal footing by properly balancing each event for the training. In the case of binary classification, we should have something like:
+B weights should be: w(B)i . [Nevt(B) / Σi w(B)i].
+S weights should be: w(S)i . [Nevt(B) / Σi w(S)i].
+Here, both B and S weights contain the same total number of eg. B events Nevt(B) as to render the respective weights numerically comparable, while naturally preserving their event-by-event differences.
 
 ## Code snippets
 

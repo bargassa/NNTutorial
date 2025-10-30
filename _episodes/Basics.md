@@ -173,4 +173,7 @@ Finally, we should mention the initializer, which is a notion often associated w
 
 ## Number of epochs, batch size
 
+> # Figure 4
+> <img src="../fig/Batch.png" alt="" style="width: 500px;"/>
+
 ## Code snippets

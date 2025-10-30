@@ -33,7 +33,7 @@ Each event i in the training should be weighted by appropriate weight wi which r
 * S weights should be like: $w(S)i = (1/N_{tot}) \times \Pi_i SF(i) \times w(i)$.
 
 Now these S & B weights, given their definition, can be very different and lead to numerical problems in the training of the NN: for example, the validation loss can reach O($10^{-6,-7}$) very early on, and lead to weird behaviors and/or under-performance. We should therefore put events on equal footing by properly balancing each event for the training. In the case of binary classification, we should have something like:
-* B weights should be: $w(B)_i \times [N_{evt}(B) / \Sigma_i w(B)_i]$.
+* B weights should be: $w(B)_i \times (N_{evt}(B) / \Sigma_i w(B)_i)$.
 * S weights should be: $w(S)_i \times [N_{evt}(B) / \Sigma_i w(S)_i]$.
 
 Here, both B and S weights contain the same total number of eg. B events Nevt(B) as to render the respective weights numerically comparable, while naturally preserving their event-by-event differences.

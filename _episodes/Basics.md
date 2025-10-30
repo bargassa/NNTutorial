@@ -141,6 +141,16 @@ It is interesting to note that an optimization based on Adam has an adaptive lea
 
 ### Regularization
 
+If one $w$ i is too large, a given node will dominate others. Consequently, the NN, as ensemble of nodes, will stop to learn because a few nodes will dominate the whole process while not allowing the learning through a large enough number of nodes. Therefore, one can introduce weight regularization in the loss function to penalize too large weights $w$:
+
+$$\
+\begin{align}
+L_1 = L + \alpha \times \Sigma_{i,j} |w_{ij}| & , & L_2 = L + \alpha \times \Sigma_{i,j} |w_{ij}|^2 & (11) &.
+\end{align}
+\$$
+
+Practically, it is penalizing, possibly suppressing, the link between nodes $i$ and $j$. Regularization can stop the training when eg. the $L_2$ norm of the difference of weights between two epochs is smaller than $\epsilon$: $||w_t − w_{t−k}||^2 < \epsilon$; it reduces over-training.
+
 ## Activation functions
 
 ## Number of epochs, batch size

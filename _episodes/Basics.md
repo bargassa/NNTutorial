@@ -109,7 +109,7 @@ Equations (7) to (10) summarize the Adam algorithm [1]. $g_t$ gives the gradient
 
 $$\
 \begin{align}
-g_t = \Delta \theta f_t (\theta_{t−1}) & (7) &.
+g_t = \nabla \theta f_t (\theta_{t−1}) & (7) &.
 \end{align}
 \$$
 
@@ -121,7 +121,7 @@ m_t = e^{−\beta_1t} · m_{t-1} + (1 - e^{−\beta_1t}) \times g_t & , & v_t = 
 \end{align}
 \$$
 
-where $β_{1,2} ∈ [0, 1[$ control the exponential decay rates of these moving averages. The moving averages themselves are estimates of the first moment (the mean) and the second raw moment (the uncentered variance) of the gradient. They are initialized as (vectors of) $\theta$’s. It should be noted that at $t=0$, we have: $m_t = m_{t−1}$, so the gradient descent doesn’t play a role for the first iteration. On the other hand, for $t = +Inf$. we have: $m_t= \Delta \theta f_t(\theta_{t−1})$, where only the gradient of the function plays a role. The estimate of these moments are given by:
+where $β_{1,2} ∈ [0, 1[$ control the exponential decay rates of these moving averages. The moving averages themselves are estimates of the first moment (the mean) and the second raw moment (the uncentered variance) of the gradient. They are initialized as (vectors of) $\theta$’s. It should be noted that at $t=0$, we have: $m_t = m_{t−1}$, so the gradient descent doesn’t play a role for the first iteration. On the other hand, for $t = +Inf$. we have: $m_t= \nabla \theta f_t(\theta_{t−1})$, where only the gradient of the function plays a role. The estimate of these moments are given by:
 
 $$\
 \begin{align}

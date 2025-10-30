@@ -52,7 +52,7 @@ We will cover more this latest aspect in the subsection "Event balancing". Final
 
 ## Architecture & weights
 
-In a NN, the information of the n input variables xi is propagated to different nodes as illustrated in figure 1, where we represent a NN with one hidden layer of m nodes. The information is propagated from the input nodes to the output node(s) via the hidden layer(s), representing the foward propagation of the NN. In this example, there is only output node. In the case of a multi-class NN, there is as much nodes as classes for classification.
+In a NN, the information of the $n$ input variables $x_i$ is propagated to different nodes as illustrated in figure 1, where we represent a NN with one hidden layer of $m$ nodes. The information is propagated from the input nodes to the output node(s) via the hidden layer(s), representing the foward propagation of the NN. In this example, there is only output node. In the case of a multi-class NN, there is as much nodes as classes for classification.
 
 > # Figure 1
 > <img src="../fig/NNarch-forw.png" alt="" style="width: 500px;"/>

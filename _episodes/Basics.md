@@ -88,7 +88,7 @@ w^{t+1}_{ij} = w^t_{ij} − [R \times e^{−D \cdot t} · \Delta w^t_{ij} ] & (5
 \end{align}
 \$$
 
-where $R$ and $D$ are the learning and decay rates, respectively. $R is usually tested in the $[10^{-5},10^{-2}]$ interval. $∆w^t_{ij}$ is the partial derivative (versus $w$) of the back-propagation between two epochs:
+where $R$ and $D$ are the learning and decay rates, respectively. $R$ is usually tested in the $[10^{-5},10^{-2}]$ interval. $\Delta w^t_{ij}$ is the partial derivative (versus $w$) of the back-propagation between two epochs:
 
 $$\
 \begin{align}

@@ -32,6 +32,24 @@ L =  - \frac{1}{N} \times \Sigma_{i=1}^{N} [ \Sigma_{j=1}^{m} z_j(i) \times ln(y
 
 where $j$ is the index of $m$ different classes. Eq. (1) is easily obtained by considering $m=2$, and considering that for each event $i$, we have $z_1 + z_2 = 1$ and $y_1 + y_2 = 1$.
 
+It has to be noted that Keras, an open-source library in Python for artificial neural networks, minimizes a slightly different loss function. For example, for binary classification, the cross-entropy that Keras minimizes is given by:
+
+$$\
+\begin{align}
+L_K = - \frac{1}{N} \times \Sigma_{i=1}^{N} wi \times [ z(i) \times ln(y(i)) + (1 - z(i)) \times ln(1 - y(i)) ] & (2) & ,
+\end{align}
+\$$
+
+where $w_i$ is the event weight, reflecting the number of events in the sample, cross section, etc; it takes into account the (signal and background) samples, both in their shape (through bins of a distribution) and normalization. Therefore, to have a numerically balanced problem to solve, the weights should be made to be comparable:
+
+$$\
+\begin{align}
+\Sigma_{i=1}^{N} w_i^S = \Sigma_{i=1}^{M} w_i^B & (3) &.
+\end{align}
+\$$
+
+We will cover more this latest aspect in the subsection "Event balancing". Finally, it should be noted that for NNs performing tasks other than classification, loss functions different from cross-entropy are minimized. For example, for the case of a NN performing a regression, the minimized loss function is often the Mean Squared Error.
+
 ## Architecture & weights
 
 ## Learning/Training of a NN

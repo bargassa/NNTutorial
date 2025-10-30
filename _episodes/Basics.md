@@ -76,6 +76,8 @@ The NN is trained iteratively on the (training) data to adjust the weights, aimi
 > # Figure 2
 > <img src="../fig/NNarch-forwbck.png" alt="" style="width: 500px;"/>
 
+The prediction of the NN for an event $y_p$ is compared with the true value $y_t$, comparison upon which the loss value is calculated. This latter value is in turn fed to the optimizer, which updates the weights, injecting them back in the forward propagation part of the training. We cover the two most known optimizers in the two subsections below.
+
 ### Gradient descent
 
 ### Adam

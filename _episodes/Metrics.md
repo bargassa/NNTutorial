@@ -53,10 +53,16 @@ In the example below, we can observe an NN improving the accuracy after each epo
 
 ## Multi-class NN: confusion matrix
 
+In the case of a multi-class NN, the confusion simply has more than two classes, as illustrated below. Again, the more diagonal is the matrix, the more correct is the classification.
+
 > # Figure 10
 > <img src="../fig/Confusion_Matrix.png" alt="" style="width: 500px;"/>
 
 ## Over-training
+
+We briefly mentioned at the start of the previous section the justification for having a validation sample. Through a comparison of the performance of the NN in the training and validation samples, one is testing the reproducibility of the NN: whether the NN 's response is similar for events that it has been trained upon (training sample) or events that it hasn't been exposed to (validation sample); this response should not depend on events. Therefore, <b>the NN's response should be similar in the training and validation samples, for both S and B events</b>.
+
+→ One simple way to check for over-training is to overlay the NN output distribution in the training and validation samples (for S events on one hand, and for B events on the other), and make sure that that they are compatible within statistical uncertainties. In the example below, a comparison is provided between the validation and test samples.
 
 > # Figure 11
 > <img src="../fig/Perf_NNoutput.png" alt="" style="width: 500px;"/>

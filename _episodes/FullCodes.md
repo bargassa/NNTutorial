@@ -13,6 +13,10 @@ Both scripts are based on python, and use Keras. Both run on csv files where eac
 
 This order is important as the numpy manipulation the various elements of the csv file in the script naturally takes it into account. In a certain measure, and for secondary aspects, the two codes have different functionalities, as to illustrate various possible outcomes.
 
+> > ## Solution:
+> > The most relevant ones for MDS are: position(x,y,z,eta,phi) and time. 
+> > 
+> {: .solution} 
 
 ## Binary
 

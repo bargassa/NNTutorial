@@ -81,7 +81,7 @@ where S and σT are the signal yield and the total uncertainty, respectively. Th
 
 $$\
 \begin{align}
-FOM = S/sqrt(S+B+σB2) & (14) &,
+FOM = \frac{S}{\sqrt(S+B+\sigma_B^2)} & (14) &,
 \end{align}
 \$$
 

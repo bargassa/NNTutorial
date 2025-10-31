@@ -19,14 +19,19 @@ The following situations are cases where one should pay attention or pitfalls:
    * Depending on the software used, the training loss can be calculated at the end of each batch and then averaged over all batches of a given epoch, while the validation loss after a full epoch. In such a case, the validation loss is calculated over the full validation set (all batches), without updating at the end of each batch. For example, the default option in Keras is to return the training loss as averaged over the individual batch losses.
    * The validation can be easier (to learn) than the training sample. This can happen if the validation and training sample are not formed from the same dataset, or if, for any reason, the validation data isn't as hard to classify as the training data. This can also happen if some training events are also mixed in the validation sample. If the code creating the training, validation and testing samples splits them correctly, from the same dataset, these shouldn't happen.
 
-
 ## True/False positive/negative
+
+In a binary classification, each event is either in one or the other class, classes that we call "positive" and "negative" (eg. S or B). And each event is predicted to be in one of these two classes by the NN. We can define a confusion matrix which gives the fraction of each true category as classified in a predicted class, see the figure below. Obviously, the more diagonal is this matrix, the better is the classification of the NN; we will cover a quantitative measure of the entire matrix in the subsequent section.
 
 > # Figure 6
 > <img src="../fig/TFpn.png" alt="" style="width: 500px;"/>
 
+A criterion for a good classifier can be to maximize the fraction of true positive events (ie. S events classified as S) while also minimizing the false positive (ie. B events classified as S). We can report the rate of each of these events for various cuts on the NN output, as illustrated in the figure below. With this criterion, the classification power of the NN is optimal when the curve the peaks as much as possible to the top-left corner of this plot (green curve). In the opposite case, when the classifier produces as much true positive as false positive, it means that it does not have any classification power (red curve). A classifier whose curve lies between these limits is fine, but again, the closer it gets to the top-left corner, the better.
+
 > # Figure 7
 > <img src="../fig/Good-vs-Bad_ROC.png" alt="" style="width: 500px;"/>
+
+A quantitative measure of this "peaking" by the area under the (roc) curve, is reported in the figure below: the greater is this area, the better is the classification.
 
 > # Figure 8
 > <img src="../fig/TrnVal_roc.png" alt="" style="width: 500px;"/>

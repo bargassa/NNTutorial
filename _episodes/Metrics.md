@@ -73,7 +73,7 @@ An area under the receiver operating characteristics curve (auroc) is essentiall
 
 $$\
 \begin{align}
-FOM = S/σT & (13) &,
+FOM = \frac{S}{\sigma_T} & (13) &,
 \end{align}
 \$$
 

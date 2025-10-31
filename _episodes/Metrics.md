@@ -89,7 +89,7 @@ where B is the background yield. If the analyzer knows that the measurement is g
 
 $$\
 \begin{align}
-FOM = S/sqrt(S+B) & (14-a) &.
+FOM = \frac{S}{\sqrt{S+B}} & (14-a) &.
 \end{align}
 \$$
 
@@ -97,7 +97,7 @@ If the analyzer further thinks that the statistical uncertainty on the signal is
 
 $$\
 \begin{align}
-FOM = S/sqrt(B) & (14-b) &.
+FOM = \frac{S}{\sqrt{B}} & (14-b) &.
 \end{align}
 \$$
 

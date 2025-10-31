@@ -69,3 +69,14 @@ To make sure, and with only the risk of redundancy, we can include the shuffle c
 ~~~
 history = model.fit(xTrn, yTrn, validation_data=(xVal,yVal,weightVal), sample_weight=weightTrn, shuffle=True, callbacks=[checkpoint], **trainParams)
 ~~~
+
+<b>Event balancing</b>
+
+For balancing the events, we normalize the weights of S and B training sample as mentioned earlier. In the case of a binary classification, we can simply have:
+
+~~~
+train_bkg[:,-2] *=  train_bkg.shape[0] / np.sum(train_bkg[:,-2])
+train_sig[:,-2] *=  train_bkg.shape[0] / np.sum(train_sig[:,-2])
+~~~
+
+where the weight of each data sample is the penultimate element of datasets train_bkg and train_sig, hence the $[:-2]$ numpy notation.

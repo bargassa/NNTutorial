@@ -7,7 +7,7 @@ The purpose of this part is to give an example of full and working script, for e
 * Files which are usable for further investigation of the NN (eg. performance).
 
 Both scripts are based on python, and use Keras. Both run on csv files where each line represents the entries for an event, and where:
-* the N first columns are the N input variables: discriminating features, which can either be continuous or discrete variables. Examples: pT and spatial distribution of various reconstructed particles, invariant masses, charge and identification and isolation variables of leptons, jet- and b-tag multiplicities, b-tagging discriminant distributions, ...
+* the N first columns are the N input variables: discriminating features, which can either be continuous or discrete variables. Examples: $p_T$ and spatial distribution of various reconstructed particles, invariant masses, charge and identification and isolation variables of leptons, jet- and b-tag multiplicities, b-tagging discriminant distributions, ...
 * followed by a column containing the event weight:
 * and then by a column containing the string specifying the physical process of the event; the way that the script expects this string is in the NameProcess.root (eg. ttbar.root) form.
 

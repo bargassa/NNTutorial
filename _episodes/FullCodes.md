@@ -13,6 +13,15 @@ Both scripts are based on python, and use Keras. Both run on csv files where eac
 
 This order is important as the numpy manipulation the various elements of the csv file in the script naturally takes it into account. In a certain measure, and for secondary aspects, the two codes have different functionalities, as to illustrate various possible outcomes.
 
+> ## Discussion 3.1 :rechits
+>
+> Can you think of some of the properties of a rechit?
+> 
+> > ## Solution:
+> > The most relevant ones for MDS are: position(x,y,z,eta,phi) and time. 
+> > 
+> {: .solution} 
+
 ## Binary
 
 The script for the binary NN uses numpy for the manipulation of vectors. It is meant to turn on csv files which provide N=12 input variables. It is integrating all snippets mentioned in previous sections. Its outcomes are:

@@ -69,4 +69,38 @@ We briefly mentioned at the start of the previous section the justification for 
 
 ## Assess performance of classification in analysis
 
+An area under the receiver operating characteristics curve (auroc) is essentially measuring true S and B events being predicted as S events. Maximizing the auroc is mainly maximizing the S/B ratio. Here, there is no uncertainty of any kind taken into account. This is obviously insufficient for gauging the classification power of an ML tool in a real analysis situation, where both statistical and systematic uncertainties have to be accounted for. Beyond the auroc's, and in order to capture a more complete statistical picture of an analysis, one can define a Figure Of Merit, which is a quantity :
+
+$$\
+\begin{align}
+FOM = S/σT & (13) &,
+\end{align}
+\$$
+
+where S and σT are the signal yield and the total uncertainty, respectively. The total uncertainty is the quadratic sum of the systematic uncertainty on the background σB and the total statistical uncertainty, itself the quadratic sum of the statistical uncertainties on the signal and background. If we assume Poisson uncertainty for the statistical uncertainty on the yields, we have:
+
+$$\
+\begin{align}
+FOM = S/sqrt(S+B+σB2) & (14) &,
+\end{align}
+\$$
+
+where B is the background yield. If the analyzer knows that the measurement is going to be dominated by statistical uncertainties, then the expression above simplifies to:
+
+$$\
+\begin{align}
+FOM = S/sqrt(S+B) & (14-a) &.
+\end{align}
+\$$
+
+If the analyzer further thinks that the statistical uncertainty on the signal is negligible when compared to the one on the background, the expression further simplifies to the well known expression:
+
+$$\
+\begin{align}
+FOM = S/sqrt(B) & (14-b) &.
+\end{align}
+\$$
+
+It has to be noted that even with the most simplifying assumptions, the FOM above is close to, but not the same than S/B, which is effectively what the auroc is about.
+
 ## Code snippets

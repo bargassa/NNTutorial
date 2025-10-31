@@ -40,3 +40,13 @@ Here, both B and S weights contain the same total number of eg. B events $N_{evt
 
 ## Code snippets
 
+<b>Event normalization</b>
+
+For normalizing the values of the input variables to the $[-1,+1]$ interval, we can do the following in a loop over the full, eg. training sample:
+
+~~~
+top = np.max(full_train[:, var]) # checks all lines by value of (variable in) column var
+bot = np.min(full_train[:, var])
+full_train[:, var] = (2*full_train[:, var] - top - bot)/(top - bot)
+~~~
+

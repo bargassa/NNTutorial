@@ -195,3 +195,45 @@ n_epochs = 2000
 batch_size = 10000
 ~~~
 
+We can then pass these parameters to the optimizer, meanwhile defining other parameters of the NN such as the number of epochs and batch size. Please note that we will cover the two latter notions in the next section. Model's compilation arguments, training parameters and optimizer:
+
+~~~
+trainParams = {'epochs': n_epochs, 'batch_size': batch_size, 'verbose': verbose}
+compileArgs = {'loss': 'binary_crossentropy', 'optimizer': 'adam', 'metrics': ["accuracy"]}
+myOpt = Adam(learning_rate=LearningRate, decay=DecayRate)
+compileArgs['optimizer'] = myOpt
+~~~
+
+Finally, we build the model, also compiling the arguments provided above. In the example below, we first build the first layer where there are 12 input variables, then the hidden layers which have as many layers/nodes as specified in the argument architecture. For both initial and hidden layers, we use ReLU as activation function and he normal as initializer. We finally define the output layer with 1 single node with a sigmoid activation function.
+
+~~~
+model = Sequential()
+# 1st hidden layer: it has as many nodes as provided by architecture[0]
+model.add(Dense(int(architecture[0]), input_dim=12, activation=activ, kernel_initializer=ini))
+i=1
+while i < len(architecture):
+    model.add(Dense(int(architecture[i]), activation=activ, kernel_initializer=ini))
+    i=i+1
+model.add(Dense(1, activation='sigmoid')) # Output layer: 1 node, with sigmoid
+model.compile(**compileArgs)
+model.summary()
+~~~
+
+Once the model is defined, we train the model:
+
+~~~
+history = model.fit(xTrn, yTrn, validation_data=(xVal,yVal,weightVal), sample_weight=weightTrn, shuffle=True, callbacks=[checkpoint], **trainParams)
+~~~
+
+When defining the model as we did above, we provided the criterion for saving the best epoch as the one where the weights are such that the validation loss is at its minimum. The method below (called checkpoint), which uses the callbacks function, saves such weights, and the it is used in the line above for training:
+
+~~~
+checkpoint = callbacks.ModelCheckpoint(
+    filepath=filepath+"best_weights.h5",
+    verbose=1,
+    save_weights_only=True,
+    monitor="val_loss",
+    mode="min",
+    save_best_only=True
+)
+~~~

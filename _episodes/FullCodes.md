@@ -23,3 +23,17 @@ The script for the binary NN uses numpy for the manipulation of vectors. It is m
 * 2 files val_output.csv and test_output.csv, where the outputs of the NN are saved for the validation and test samples, and which are necessary for downstream calculations.
 
 ## Multiclass
+
+The script for the multi-class NN is classifying 5 different processes (Signal, Wjets, TTbar, Z2nu, Other), and has thus 5 different classes. It uses panda for the manipulation of vectors, and is performing this manipulation slightly differently than in the binary script, but with similar outcomes. It is meant to turn on csv files which provide N=17 input variables. This script is performing 2 loops, the first being nested in the second:
+
+* It is simply running 10 times, letting all random-based processes (initialization, shuffling, seeding) produce 10 different results, which are close in performance.
+* It is scanning the decay-rate from $10^{-5}$ to $10^{-3}$.
+
+It goes without saying that these loops can be taken out, or modified. This script has performance calculation capacity embedded in it, and doesn't need a downstream script to be run. The outcomes of the script are:
+* A file 17var_fom.csv necessary for possible downstream performance calculations.
+* 10 different subdirectories, corresponding to the 10 runs, with each containing:
+   * 2 plots: TrnVal_loss.png, TrnVal_accuracy.png, as in the binary case.
+   * A file for weights best_weights.h5, as in the binary case.
+   * A subdirectory FOM_figures_runs/ which has the performance plots of all 10 runs in it.
+
+As for the event balancing used in the case of multi-class NN, we do an event weighting similar yet different than in the "Event weighting & balancing" section. Interested users are invited to look at slides 10-13 and 23 of [this presentation](https://indico.cern.ch/event/1503118/contributions/6327106/subcontributions/539906/attachments/3037743/5366723/PBargassa_ML3.pdf); referring to these slides, the balancing scheme used in this script is the "SQRT".

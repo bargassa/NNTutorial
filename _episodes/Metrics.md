@@ -104,3 +104,39 @@ FOM = S/sqrt(B) & (14-b) &.
 It has to be noted that even with the most simplifying assumptions, the FOM above is close to, but not the same than S/B, which is effectively what the auroc is about.
 
 ## Code snippets
+
+<b>Loss & accuracy curves</b>
+
+For obtaining the loss and accuracy (versus epoch) curves, we should first include them among the very list of arguments to be compiled. For the loss, we should specify which type of loss we want, and for the accuracy, we should include it among the metrics:
+
+~~~
+compileArgs = {'loss': 'binary_crossentropy', 'optimizer': 'adam', 'metrics': ["accuracy"]}
+~~~
+
+Then, and after having trained the model, we can obtain these curves for the training and validation samples with the following lines:
+
+~~~
+loss = history.history['loss']
+val_loss = history.history['val_loss']
+acc = history.history["accuracy"]
+val_acc = history.history['val_accuracy']
+~~~
+
+<b>ROC curves</b>
+
+In order calculate the roc curve and the auroc, one should first import the corresponding libraries:
+
+~~~
+from sklearn.metrics import roc_curve, auc
+~~~
+
+We can then obtain the roc cruve and the auroc, for both the training and validation samples, with the following lines:
+
+~~~
+y_pred_Trn = model.predict(xTrn).ravel()
+fpr_Trn, tpr_Trn, thresholds_Trn = roc_curve(yTrn, y_pred_Trn)
+auc_Trn = auc(fpr_Trn, tpr_Trn)
+y_pred_Val = model.predict(xVal).ravel()
+fpr_Val, tpr_Val, thresholds_Val = roc_curve(yVal, y_pred_Val)
+auc_Val = auc(fpr_Val, tpr_Val)
+~~~

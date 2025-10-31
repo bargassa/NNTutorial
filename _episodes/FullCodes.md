@@ -16,4 +16,10 @@ This order is important as the numpy manipulation the various elements of the cs
 
 ## Binary
 
+The script for the binary NN uses numpy for the manipulation of vectors. It is meant to turn on csv files which provide N=12 input variables. It is integrating all snippets mentioned in previous sections. Its outcomes are:
+
+* 3 plots: TrnVal_loss.png, TrnVal_accuracy.png, TrnVal_roc.png, respectively showing the evolution of the loss, accuracy, and roc curves as a function of the epoch, these for the training and validation samples.
+* A file for weights: best_weights.h5 which has the weights of the NN corresponding to the epoch where the validation loss is the lowest, ie. the best weights one can get from the NN training. This file is useful downstream calculations (eg. for calculating the performance of the NN).
+* 2 files val_output.csv and test_output.csv, where the outputs of the NN are saved for the validation and test samples, and which are necessary for downstream calculations.
+
 ## Multiclass

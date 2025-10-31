@@ -204,7 +204,7 @@ myOpt = Adam(learning_rate=LearningRate, decay=DecayRate)
 compileArgs['optimizer'] = myOpt
 ~~~
 
-Finally, we build the model, also compiling the arguments provided above. In the example below, we first build the first layer where there are 12 input variables, then the hidden layers which have as many layers/nodes as specified in the argument architecture. For both initial and hidden layers, we use ReLU as activation function and he normal as initializer. We finally define the output layer with 1 single node with a sigmoid activation function.
+Finally, we build the model, also compiling the arguments provided above. In the example below, we first build the first layer where there are 12 input variables, then the hidden layers which have as many layers/nodes as specified in the argument $architecture$. For both initial and hidden layers, we use ReLU as activation function and he normal as initializer. We finally define the output layer with 1 single node with a sigmoid activation function.
 
 ~~~
 model = Sequential()
@@ -225,7 +225,7 @@ Once the model is defined, we train the model:
 history = model.fit(xTrn, yTrn, validation_data=(xVal,yVal,weightVal), sample_weight=weightTrn, shuffle=True, callbacks=[checkpoint], **trainParams)
 ~~~
 
-When defining the model as we did above, we provided the criterion for saving the best epoch as the one where the weights are such that the validation loss is at its minimum. The method below (called checkpoint), which uses the callbacks function, saves such weights, and the it is used in the line above for training:
+When defining the model as we did above, we provided the criterion for saving the best epoch as the one where the weights are such that the validation loss is at its minimum. The method below (called $checkpoint$), which uses the $callbacks$ function, saves such weights, and the it is used in the line above for training:
 
 ~~~
 checkpoint = callbacks.ModelCheckpoint(

@@ -38,6 +38,12 @@ A quantitative measure of this "peaking" by the area under the (roc) curve, is r
 
 ## Accuracy versus epoch
 
+A quantity measuring in a single shot all the elements of the binary confusion matrix is the accuracy, defined as the ratio of events classified in their correct classes to all events:
+
+Accuracy = \frac{True_{positive} + True_{negative} }{ True_{positive} + True_{negative} + False_{positive} + False_{negative}} & (12) &,
+
+In the example below, we can observe an NN improving the accuracy after each epoch, and somehow plateau after a certain number of epochs:
+
 > # Figure 9
 > <img src="../fig/TrnVal_accuracy.png" alt="" style="width: 500px;"/>
 

@@ -50,3 +50,22 @@ bot = np.min(full_train[:, var])
 full_train[:, var] = (2*full_train[:, var] - top - bot)/(top - bot)
 ~~~
 
+<b>Event shuffling</b>
+
+For shuffling events, we can apply the following numpy command on the full eg. training sample:
+
+~~~
+np.random.shuffle(full_train) 
+~~~
+
+Without the former line, the NN would be first exposed to S for many events, this because we have concatenated the entire training sample with this rather common command:
+
+~~~
+full_train = np.concatenate((train_sig, train_bkg))
+~~~
+
+To make sure, and with only the risk of redundancy, we can include the shuffle command in the very line which takes care of the training of the NN:
+
+~~~
+history = model.fit(xTrn, yTrn, validation_data=(xVal,yVal,weightVal), sample_weight=weightTrn, shuffle=True, callbacks=[checkpoint], **trainParams)
+~~~
